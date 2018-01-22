@@ -1,0 +1,41 @@
+[gd_resource type="SampleLibrary" load_steps=6 format=1]
+
+[ext_resource path="res://sound/aa.smp" type="Sample" id=1]
+[ext_resource path="res://sound/18_blaster2.smp" type="Sample" id=2]
+[ext_resource path="res://sound/18_blaster1.smp" type="Sample" id=3]
+[ext_resource path="res://sound/18_blaster1-[AudioTrimmer.com].smp" type="Sample" id=4]
+[ext_resource path="res://sound/12_fuze1.smp" type="Sample" id=5]
+
+[resource]
+
+samples/aa = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 1 )
+}
+samples/end = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
+samples/fire = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 3 )
+}
+samples/fn = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 4 )
+}
+samples/fuse = {
+"db": 24.0,
+"pitch": 0.5,
+"priority": 0,
+"sample": ExtResource( 5 )
+}
+

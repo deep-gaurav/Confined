@@ -1,0 +1,61 @@
+[gd_resource type="Environment" load_steps=3 format=1]
+
+[ext_resource path="res://cubemaps/nebula/skybox_down.png" type="Texture" id=1]
+
+[sub_resource type="CubeMap" id=1]
+
+flags = 7
+side/left = Image()
+side/right = Image()
+side/bottom = Image()
+side/top = Image()
+side/front = Image()
+side/back = Image()
+lossy_quality = 0.7
+
+[resource]
+
+ambient_light/enabled = true
+ambient_light/color = Color( 1, 1, 1, 1 )
+ambient_light/energy = 0.15
+fxaa/enabled = false
+background/mode = 3
+background/color = Color( 0, 0, 0, 1 )
+background/texture = ExtResource( 1 )
+background/cubemap = SubResource( 1 )
+background/energy = 0.05
+background/scale = 1.0
+background/glow = 8.0
+background/canvas_max_layer = 0
+glow/enabled = true
+glow/blur_passes = 1
+glow/blur_scale = 0.88
+glow/blur_strength = 1.97
+glow/blur_blend_mode = 0
+glow/bloom = 1.31
+glow/bloom_treshold = 0.78
+dof_blur/enabled = false
+dof_blur/blur_passes = 1
+dof_blur/begin = 100.0
+dof_blur/range = 10.0
+hdr/enabled = false
+hdr/tonemapper = 2.0
+hdr/exposure = 0.98
+hdr/white = 1.0
+hdr/glow_treshold = 0.95
+hdr/glow_scale = 0.2
+hdr/min_luminance = 0.4
+hdr/max_luminance = 8.0
+hdr/exposure_adj_speed = 0.509
+fog/enabled = true
+fog/begin = 6.69
+fog/begin_color = Color( 0.0361001, 0.0429688, 0.033905, 1 )
+fog/end_color = Color( 0, 0, 0, 1 )
+fog/attenuation = 0.196146
+fog/bg = true
+bcs/enabled = true
+bcs/brightness = 3.0
+bcs/contrast = 1.0
+bcs/saturation = 1.0
+srgb/enabled = false
+

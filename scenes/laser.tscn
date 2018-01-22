@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://models/cilender_ray.msh" type="Mesh" id=1]
+
+[sub_resource type="CapsuleShape" id=1]
+
+radius = 0.201647
+height = 4.21796
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Area
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+
+	set_fixed_process(true)
+func _fixed_process(delta):
+	set_translation(get_translation()+Vector3(0.1,0,0))
+
+
+func _on_laser_body_enter( body ):
+	if body.is_in_group(\"player\"):
+		global_game.hp-=75
+"
+
+[node name="laser" type="Area" groups=[
+"laser",
+]]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+input/ray_pickable = false
+input/capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Transform( 0.352523, 0, 0, 0, -5.74332e-08, -1.41009, 0, 0.352523, -2.29733e-07, 0, 0, 0 )
+shapes/0/trigger = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision/layers = 1
+collision/mask = 1
+script/script = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.25, 0, 0, 0, 1.8, 0, 0, 0, 0.25, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 1 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.352523, 0, 0, 0, -5.74332e-08, -1.41009, 0, 0.352523, -2.29733e-07, 0, 0, 0 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="body_enter" from="." to="." method="_on_laser_body_enter"]
+
+

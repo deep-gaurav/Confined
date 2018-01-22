@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://models/plane.msh" type="Mesh" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 10.4377, 0.544212, 2.44138 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "walltexanim"
+length = 1.0
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:mesh/mesh:surface_1/material:uv_xform")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.5, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0 ), Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0.5, 0 ), Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0 ) ] }
+
+[node name="Spatial" type="Spatial"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="." groups=[ "wall" ]]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+input/ray_pickable = true
+input/capture_on_drag = false
+shape_count = 1
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98825, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1048575
+collision/mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98825, 0, 0 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 0
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 1 )
+mesh/skeleton = NodePath("..")
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/walltexanim = SubResource( 2 )
+playback/active = true
+playback/speed = 0.5
+blend_times = [  ]
+autoplay = "walltexanim"
+
+

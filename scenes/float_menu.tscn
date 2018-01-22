@@ -1,0 +1,869 @@
+[gd_scene load_steps=25 format=1]
+
+[ext_resource path="res://scripts/float_menu_.gd" type="Script" id=1]
+[ext_resource path="res://sprites/frame_gui.png" type="Texture" id=2]
+[ext_resource path="res://resources/space.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://scripts/UI/setting_show.gd" type="Script" id=4]
+[ext_resource path="res://scripts/music.gd" type="Script" id=5]
+[ext_resource path="res://sprites/12985816491739307713music-icon-hi.tex" type="Texture" id=6]
+[ext_resource path="res://resources/polyfont.fnt" type="BitmapFont" id=7]
+[ext_resource path="res://scripts/togglegraphics.gd" type="Script" id=8]
+[ext_resource path="res://scripts/sound.gd" type="Script" id=9]
+[ext_resource path="res://sprites/Sound-icon.tex" type="Texture" id=10]
+[ext_resource path="res://scripts/joysen.gd" type="Script" id=11]
+[ext_resource path="res://sprites/2000px-Joystick_icon.svg.tex" type="Texture" id=12]
+[ext_resource path="res://scripts/UI/back.gd" type="Script" id=13]
+[ext_resource path="res://resources/pdark num.fnt" type="BitmapFont" id=14]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "close"
+length = 3.5
+loop = false
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("container/Play:rect/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect/size")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0.5, 1.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 323, 234 ), Vector2( 160, 155 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.5, 1.5, 2.5 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 263, 98 ), Vector2( 402, 202 ), Vector2( 402, 303 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rect/scale")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 1.5, 2.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1.5, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("container/Settings:rect/scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("container/Credits:visibility/visible")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("container/Credits:rect/scale")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("container/Garage:rect/scale")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+length = 3.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1.5, 1.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect/size")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 1, 2, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 160, 155 ), Vector2( 323, 155 ), Vector2( 323, 234 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("container/Play:rect/scale")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 3, 3.5 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:rect/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 1, 2, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 500, 300 ), Vector2( 400, 175 ), Vector2( 247, 175 ), Vector2( 247, 111 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("container/Settings:visibility/visible")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("container/Settings:rect/scale")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 3, 3.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("container/Credits:visibility/visible")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("container/Credits:rect/scale")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 3, 3.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("container/Garage:visibility/visible")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("container/Garage:rect/scale")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 3, 3.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=7]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxFlat" id=8]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.0761566, 0.594508, 0.847656, 1 )
+light_color = Color( 0.218201, 0.859375, 0.844347, 1 )
+dark_color = Color( 0.178711, 0.224785, 0.714844, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=9]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.00784314, 0.00784314, 0.14902, 1 )
+light_color = Color( 0.0751038, 0.0751038, 0.417969, 1 )
+dark_color = Color( 0.204437, 0.362557, 0.902344, 1 )
+border_size = 2
+border_blend = true
+draw_bg = true
+
+[sub_resource type="GDScript" id=10]
+
+script/source = "extends CheckButton
+
+# class member variables go here, for example:
+# var a = 2
+# var b = \"textvar\"
+
+func _ready():
+	# Called every time the node is added to the scene.
+	# Initialization here
+	set_toggle_mode(global_game.enable_ads)
+	
+
+
+
+func _on_ads_toggle_toggled( pressed ):
+	global_game.enable_ads=pressed
+	global_game.saveval()
+"
+
+[node name="Node" type="Node"]
+
+script/script = ExtResource( 1 )
+
+[node name="Patch9Frame" type="Patch9Frame" parent="."]
+
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 263.0
+margin/top = 98.0
+margin/right = 586.0
+margin/bottom = 332.0
+texture = ExtResource( 2 )
+modulate = Color( 0.0507812, 0.0656128, 1, 1 )
+patch_margin/left = 80
+patch_margin/top = 80
+patch_margin/right = 80
+patch_margin/bottom = 75
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Patch9Frame"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/close = SubResource( 1 )
+"anims/patch open" = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "patch open"
+
+[node name="container" type="VBoxContainer" parent="Patch9Frame"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 35.0
+margin/top = 40.0
+margin/right = 292.0
+margin/bottom = 207.0
+alignment = 0
+
+[node name="Play" type="Button" parent="Patch9Frame/container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 257.0
+margin/bottom = 38.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "PLAY"
+flat = false
+
+[node name="Settings" type="Button" parent="Patch9Frame/container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 42.0
+margin/right = 257.0
+margin/bottom = 80.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Settings"
+flat = false
+script/script = ExtResource( 4 )
+
+[node name="Garage" type="Button" parent="Patch9Frame/container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 84.0
+margin/right = 257.0
+margin/bottom = 122.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Garage"
+flat = false
+script/script = ExtResource( 4 )
+
+[node name="Credits" type="Button" parent="Patch9Frame/container"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 126.0
+margin/right = 257.0
+margin/bottom = 167.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Credits"
+flat = false
+script/script = ExtResource( 4 )
+
+[node name="settings" type="Control" parent="Patch9Frame"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="music" type="ProgressBar" parent="Patch9Frame/settings"]
+
+visibility/behind_parent = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 96.0
+margin/top = 113.0
+margin/right = 251.0
+margin/bottom = 131.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+script/script = ExtResource( 5 )
+
+[node name="HScrollBar" type="HScrollBar" parent="Patch9Frame/settings/music"]
+
+visibility/blend_mode = 1
+rect/scale = Vector2( 3, 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 51.0
+margin/bottom = 16.0
+custom_styles/scroll_focus = SubResource( 8 )
+custom_styles/scroll = SubResource( 9 )
+range/min = 0.0
+range/max = 100.0
+range/step = 0.0
+range/page = 0.0
+range/value = 20.0
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="music" type="Sprite" parent="Patch9Frame/settings/music"]
+
+transform/pos = Vector2( -21.7343, 5.10898 )
+transform/scale = Vector2( 0.293357, 0.293357 )
+texture = ExtResource( 6 )
+
+[node name="graphics" type="Label" parent="Patch9Frame/settings/music"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -22.0
+margin/top = -31.0
+margin/right = 314.0
+margin/bottom = 17.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.191406, 0.583069, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "High Graphics"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="toggle_graphics" type="CheckButton" parent="Patch9Frame/settings/music/graphics"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 337.0
+margin/top = 5.0
+margin/right = 413.0
+margin/bottom = 27.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+align = 0
+script/script = ExtResource( 8 )
+
+[node name="ads" type="Label" parent="Patch9Frame/settings/music"]
+
+rect/scale = Vector2( 0.4, 0.4 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 194.0
+margin/top = 167.0
+margin/right = 530.0
+margin/bottom = 215.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0.191406, 0.583069, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+text = "Enable Ad"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="ads toggle" type="CheckButton" parent="Patch9Frame/settings/music/ads"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 253.0
+margin/top = 3.0
+margin/right = 329.0
+margin/bottom = 25.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+align = 0
+script/script = SubResource( 10 )
+
+[node name="Label" type="Label" parent="Patch9Frame/settings/music/ads"]
+
+rect/scale = Vector2( 2, 2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 66.0
+margin/top = 48.0
+margin/right = 229.0
+margin/bottom = 62.0
+text = "Support Developer"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="sound" type="ProgressBar" parent="Patch9Frame/settings"]
+
+editor/display_folded = true
+visibility/behind_parent = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 96.0
+margin/top = 148.0
+margin/right = 251.0
+margin/bottom = 166.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.2
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+script/script = ExtResource( 9 )
+
+[node name="HScrollBar" type="HScrollBar" parent="Patch9Frame/settings/sound"]
+
+visibility/blend_mode = 1
+rect/scale = Vector2( 3, 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 51.0
+margin/bottom = 16.0
+custom_styles/scroll_focus = SubResource( 8 )
+custom_styles/scroll = SubResource( 9 )
+range/min = 0.0
+range/max = 100.0
+range/step = 0.0
+range/page = 0.0
+range/value = 0.2
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="sound" type="Sprite" parent="Patch9Frame/settings/sound"]
+
+transform/pos = Vector2( -22.0617, 8.12957 )
+transform/scale = Vector2( 0.0423848, 0.0423848 )
+texture = ExtResource( 10 )
+
+[node name="sensitivity" type="ProgressBar" parent="Patch9Frame/settings"]
+
+visibility/behind_parent = true
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 96.0
+margin/top = 180.0
+margin/right = 251.0
+margin/bottom = 198.0
+range/min = 0.0
+range/max = 0.5
+range/step = 0.01
+range/page = 0.0
+range/value = 0.5
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+script/script = ExtResource( 11 )
+
+[node name="HScrollBar" type="HScrollBar" parent="Patch9Frame/settings/sensitivity"]
+
+visibility/blend_mode = 1
+rect/scale = Vector2( 3, 1 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 51.0
+margin/bottom = 16.0
+custom_styles/scroll_focus = SubResource( 8 )
+custom_styles/scroll = SubResource( 9 )
+range/min = 0.0
+range/max = 0.5
+range/step = 0.0
+range/page = 0.0
+range/value = 0.2
+range/exp_edit = false
+range/rounded = false
+custom_step = -1.0
+
+[node name="joysense" type="Sprite" parent="Patch9Frame/settings/sensitivity"]
+
+transform/pos = Vector2( -22.6177, 6.47337 )
+transform/scale = Vector2( 0.0158996, 0.0158996 )
+texture = ExtResource( 12 )
+
+[node name="back" type="Button" parent="Patch9Frame/settings"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 63.0
+margin/top = 21.0
+margin/right = 170.0
+margin/bottom = 77.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Back"
+flat = false
+script/script = ExtResource( 13 )
+
+[node name="credits" type="Control" parent="Patch9Frame"]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 143.333
+margin/top = 98.6667
+margin/right = 183.333
+margin/bottom = 138.667
+
+[node name="Credits" type="Label" parent="Patch9Frame/credits"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -31.0
+margin/top = -64.0
+margin/right = 76.0
+margin/bottom = -42.0
+custom_fonts/font = ExtResource( 14 )
+custom_colors/font_color = Color( 0.578125, 0.980225, 1, 1 )
+text = "CREDITS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Patch9Frame/credits"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -94.0
+margin/top = -38.0
+margin/right = 132.0
+margin/bottom = 85.0
+bbcode/enabled = true
+bbcode/bbcode = "[b][color=silver]Developed and
+ Programmed  - [/color] [color=aqua]Deep Gaurav [/color] [/b]
+
+Dev Assist       -  [color=lime] Sam Lee [/color]             
+        
+Testing, Minor    [color=fuchsia]Anchal Gupta[/color]
+     Ideas and      [color=teal]Ujjawal [/color]
+       Help  [color=teal]           Srivastava[/color]
+
+Ship Models - [color=green]Victor Hahn(Viktor.Hahn@web.de)[/color]                          
+
+Music     - [color=green]Mrthenoronha @Freesound.org [/color]
+"
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="back1" type="Button" parent="Patch9Frame/credits"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -7.0
+margin/top = 94.0
+margin/right = 74.0
+margin/bottom = 128.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.519531, 0.549561, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Back"
+flat = false
+script/script = ExtResource( 13 )
+
+[connection signal="finished" from="Patch9Frame/AnimationPlayer" to="." method="_on_AnimationPlayer_finished"]
+
+[connection signal="button_down" from="Patch9Frame/container/Play" to="." method="_on_Button_button_down" flags=6]
+
+[connection signal="pressed" from="Patch9Frame/container/Settings" to="Patch9Frame/container/Settings" method="_on_Settings_pressed"]
+
+[connection signal="pressed" from="Patch9Frame/container/Garage" to="Patch9Frame/container/Garage" method="_on_Garage_pressed"]
+
+[connection signal="visibility_changed" from="Patch9Frame/container/Garage" to="Patch9Frame/container/Garage" method="_on_Garage_visibility_changed"]
+
+[connection signal="pressed" from="Patch9Frame/container/Credits" to="Patch9Frame/container/Credits" method="_on_Credits_pressed"]
+
+[connection signal="value_changed" from="Patch9Frame/settings/music/HScrollBar" to="Patch9Frame/settings/music" method="_on_HScrollBar_value_changed"]
+
+[connection signal="toggled" from="Patch9Frame/settings/music/graphics/toggle_graphics" to="Patch9Frame/settings/music/graphics/toggle_graphics" method="_on_toggle_graphics_toggled"]
+
+[connection signal="visibility_changed" from="Patch9Frame/settings/music/graphics/toggle_graphics" to="Patch9Frame/settings/music/graphics/toggle_graphics" method="_on_toggle_graphics_visibility_changed"]
+
+[connection signal="toggled" from="Patch9Frame/settings/music/ads/ads toggle" to="Patch9Frame/settings/music/ads/ads toggle" method="_on_ads_toggle_toggled"]
+
+[connection signal="value_changed" from="Patch9Frame/settings/sound/HScrollBar" to="Patch9Frame/settings/sound" method="_on_HScrollBar_value_changed"]
+
+[connection signal="value_changed" from="Patch9Frame/settings/sensitivity/HScrollBar" to="Patch9Frame/settings/sensitivity" method="_on_HScrollBar_value_changed"]
+
+[connection signal="pressed" from="Patch9Frame/settings/back" to="Patch9Frame/settings/back" method="_on_back_pressed"]
+
+[connection signal="pressed" from="Patch9Frame/credits/back1" to="Patch9Frame/credits/back1" method="_on_back1_pressed"]
+
+
